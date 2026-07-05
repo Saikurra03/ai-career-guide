@@ -49,12 +49,23 @@ body {
 }
 
 /* Scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
-.dark ::-webkit-scrollbar-thumb { background: #475569; }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: transparent; margin: 4px 0; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; border: 2px solid var(--background); }
+.dark ::-webkit-scrollbar-thumb { background: #475569; border: 2px solid var(--background); }
 ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 .dark ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+::-webkit-scrollbar-button { display: none; }
+::-webkit-scrollbar-corner { background: transparent; }
+
+/* Main content scrollbar - always visible */
+main::-webkit-scrollbar { width: 8px; }
+main::-webkit-scrollbar-track { background: var(--border); border-radius: 4px; }
+main::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
+.dark main::-webkit-scrollbar-track { background: #1e293b; }
+.dark main::-webkit-scrollbar-thumb { background: #64748b; }
+main::-webkit-scrollbar-thumb:hover { background: #64748b; }
+.dark main::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
 /* Dark mode helpers */
 .dark .bg-white { background-color: var(--card) !important; }
