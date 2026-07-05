@@ -45,7 +45,53 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Smooth transition for all elements */
+*, *::before, *::after {
+  transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease, fill 0.4s ease;
+}
+
+/* Disable transitions on scrollbar to prevent lag */
+::-webkit-scrollbar,
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb {
+  transition: none !important;
+}
+
+/* Theme toggle button animation */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
+  50% { box-shadow: 0 0 20px 4px rgba(99, 102, 241, 0.2); }
+}
+
+.theme-toggle-active {
+  animation: spin-slow 0.5s ease-in-out;
+}
+
+.theme-switching {
+  animation: pulse-glow 0.6s ease-in-out;
+}
+
+/* Page fade-in on load */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+main > div {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Card hover glow in dark mode */
+.dark .dark-glow:hover {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
 }
 
 /* Scrollbar */

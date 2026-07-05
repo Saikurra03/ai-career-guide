@@ -25,6 +25,7 @@ const links = [
 export function Sidebar() {
   const pathname = usePathname();
   const [dark, setDark] = useState(false);
+  const [animating, setAnimating] = useState(false);
 
   useEffect(() => {
     const saved = localStorage.getItem("theme");
@@ -35,6 +36,7 @@ export function Sidebar() {
   }, []);
 
   const toggleTheme = () => {
+    setAnimating(true);
     const next = !dark;
     setDark(next);
     if (next) {
@@ -44,6 +46,7 @@ export function Sidebar() {
       document.documentElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
     }
+    setTimeout(() => setAnimating(false), 500);
   };
 
   return (
@@ -72,9 +75,12 @@ export function Sidebar() {
       <div className="p-4 border-t border-border space-y-3">
         <button
           onClick={toggleTheme}
-          className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-gray-100 dark:bg-gray-800 rounded-xl text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-all"
+          className={`w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-gray-100 dark:bg-gray-800 rounded-xl text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-all ${animating ? "theme-toggle-active theme-switching" : ""}`}
         >
-          {dark ? "☀️ Light Mode" : "🌙 Dark Mode"}
+          <span className={`inline-block transition-transform duration-500 ${animating ? "rotate-180" : ""}`}>
+            {dark ? "☀️" : "🌙"}
+          </span>
+          {dark ? "Light Mode" : "Dark Mode"}
         </button>
         <p className="text-xs text-text-muted text-center">AI Career Guide v1.0</p>
       </div>
