@@ -1,8 +1,58 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
+function Confetti() {
+  const [particles, setParticles] = useState<{ id: number; x: number; color: string; delay: number; size: number; rotation: number }[]>([]);
+
+  useEffect(() => {
+    const colors = ["#6366f1", "#ec4899", "#f59e0b", "#10b981", "#3b82f6", "#8b5cf6", "#ef4444", "#06b6d4"];
+    const arr = Array.from({ length: 60 }, (_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      delay: Math.random() * 0.5,
+      size: Math.random() * 8 + 4,
+      rotation: Math.random() * 360,
+    }));
+    setParticles(arr);
+  }, []);
+
+  return (
+    <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
+      {particles.map((p) => (
+        <div
+          key={p.id}
+          className="absolute confetti-piece"
+          style={{
+            left: `${p.x}%`,
+            top: "-10px",
+            width: `${p.size}px`,
+            height: `${p.size}px`,
+            backgroundColor: p.color,
+            borderRadius: Math.random() > 0.5 ? "50%" : "2px",
+            animationDelay: `${p.delay}s`,
+            transform: `rotate(${p.rotation}deg)`,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
 export default function AboutPage() {
+  const [showConfetti, setShowConfetti] = useState(false);
+
+  useEffect(() => {
+    setShowConfetti(true);
+    const timer = setTimeout(() => setShowConfetti(false), 2500);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="max-w-3xl mx-auto">
+      {showConfetti && <Confetti />}
+
       <h1 className="text-3xl font-bold mb-2">About</h1>
       <p className="text-text-muted mb-8">The person behind AI Career Guide.</p>
 
@@ -44,9 +94,9 @@ export default function AboutPage() {
       </div>
 
       {/* Built by a Student */}
-      <div className="bg-gradient-to-br from-indigo-50 to-purple-50 border border-indigo-200 rounded-2xl p-8 mb-8">
-        <h3 className="font-bold text-lg mb-4">Built by a Student, for Students</h3>
-        <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+      <div className="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-950 dark:to-purple-950 border border-indigo-200 dark:border-indigo-800 rounded-2xl p-8 mb-8">
+        <h3 className="font-bold text-lg mb-4 text-foreground">Built by a Student, for Students</h3>
+        <div className="space-y-4 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
           <p>
             I know what it feels like to stare at a blank resume, wondering if it&apos;s good enough.
             I know the anxiety of applying to hundreds of jobs and hearing nothing back. I know
@@ -62,7 +112,7 @@ export default function AboutPage() {
             here to give you the same advantages that career coaches charge hundreds of dollars for.
             Because everyone deserves a fair shot at their career.
           </p>
-          <p className="font-medium text-indigo-700">
+          <p className="font-medium text-indigo-700 dark:text-indigo-400">
             You&apos;re not alone in this. We&apos;re all figuring it out together.
           </p>
         </div>
@@ -71,7 +121,7 @@ export default function AboutPage() {
       {/* About the Project */}
       <div className="bg-card border border-border rounded-2xl p-8 mb-8">
         <h3 className="font-bold text-lg mb-4">About AI Career Guide</h3>
-        <div className="space-y-4 text-sm text-gray-600 leading-relaxed">
+        <div className="space-y-4 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
           <p>
             AI Career Guide is an AI-powered resume analyzer that helps job seekers optimize their resumes
             and ace their job applications. Built with Next.js and the Cohere API.
@@ -89,7 +139,7 @@ export default function AboutPage() {
         <h3 className="font-bold text-lg mb-4">Tech Stack</h3>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {["Next.js", "TypeScript", "Tailwind CSS", "Cohere API", "pdf2json", "jsPDF", "Vercel"].map((tech) => (
-            <div key={tech} className="px-4 py-2 bg-indigo-50 border border-indigo-200 rounded-xl text-center text-xs font-medium text-indigo-700">
+            <div key={tech} className="px-4 py-2 bg-indigo-50 dark:bg-indigo-950 border border-indigo-200 dark:border-indigo-800 rounded-xl text-center text-xs font-medium text-indigo-700 dark:text-indigo-400">
               {tech}
             </div>
           ))}
