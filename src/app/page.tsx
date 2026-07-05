@@ -25,7 +25,7 @@ export default function Dashboard() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
         {features.map((f) => (
-          <Link key={f.href} href={f.href} className="bg-white border border-border rounded-2xl p-5 hover:shadow-lg hover:border-primary/30 transition-all group">
+          <Link key={f.href} href={f.href} className="bg-card border border-border rounded-2xl p-5 hover:shadow-lg hover:border-primary/30 transition-all group">
             <div className={`w-11 h-11 ${f.color} rounded-xl flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition-transform`}>{f.icon}</div>
             <h3 className="font-bold text-sm mb-1">{f.title}</h3>
             <p className="text-xs text-text-muted">{f.desc}</p>
@@ -33,7 +33,7 @@ export default function Dashboard() {
         ))}
       </div>
 
-      <div className="bg-white border border-border rounded-2xl p-8">
+      <div className="bg-card border border-border rounded-2xl p-8">
         <h2 className="text-xl font-bold mb-4">Get Started</h2>
         <p className="text-text-muted mb-6">Upload your resume to receive instant feedback from our AI analyzer.</p>
         <Link href="/upload" className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl font-semibold hover:bg-primary-hover transition-colors">

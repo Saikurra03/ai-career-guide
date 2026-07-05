@@ -89,7 +89,7 @@ export default function SkillsPage() {
       <h1 className="text-3xl font-bold mb-2">Skill Gap Analysis</h1>
       <p className="text-text-muted mb-8">Find out what skills you&apos;re missing and get a personalized learning plan.</p>
 
-      <div className="bg-white border border-border rounded-2xl p-6 mb-6">
+      <div className="bg-card border border-border rounded-2xl p-6 mb-6">
         <h2 className="font-bold mb-4">Upload Resume</h2>
         <div
           onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
@@ -122,7 +122,7 @@ export default function SkillsPage() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-        <div className="bg-white border border-border rounded-2xl p-6">
+        <div className="bg-card border border-border rounded-2xl p-6">
           <h2 className="font-bold mb-2">Job Description</h2>
           <p className="text-xs text-text-muted mb-3">Paste the full job posting</p>
           <textarea
@@ -133,7 +133,7 @@ export default function SkillsPage() {
             className="w-full px-3 py-2 border-2 border-border rounded-xl text-sm focus:outline-none focus:border-primary transition-all resize-y min-h-[200px]"
           />
         </div>
-        <div className="bg-white border border-border rounded-2xl p-6">
+        <div className="bg-card border border-border rounded-2xl p-6">
           <h2 className="font-bold mb-2">Target Role</h2>
           <p className="text-xs text-text-muted mb-3">Optional: specify a role or career goal</p>
           <input
@@ -180,15 +180,15 @@ export default function SkillsPage() {
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold">Skill Gap Report ({sections.length} sections)</h2>
             <div className="flex gap-2">
-              <button onClick={() => setOpenIndex(null)} className="px-3 py-1.5 border border-border rounded-lg text-xs font-medium hover:bg-gray-50">Expand All</button>
-              <button onClick={() => setOpenIndex(-1)} className="px-3 py-1.5 border border-border rounded-lg text-xs font-medium hover:bg-gray-50">Collapse All</button>
-              <button onClick={() => navigator.clipboard.writeText(rawResult)} className="px-3 py-1.5 border border-border rounded-lg text-xs font-medium hover:bg-gray-50">Copy</button>
+              <button onClick={() => setOpenIndex(null)} className="px-3 py-1.5 border border-border rounded-lg text-xs font-medium hover:bg-hover-bg">Expand All</button>
+              <button onClick={() => setOpenIndex(-1)} className="px-3 py-1.5 border border-border rounded-lg text-xs font-medium hover:bg-hover-bg">Collapse All</button>
+              <button onClick={() => navigator.clipboard.writeText(rawResult)} className="px-3 py-1.5 border border-border rounded-lg text-xs font-medium hover:bg-hover-bg">Copy</button>
             </div>
           </div>
           <div className="space-y-3">
             {sections.map((sec, i) => (
-              <div key={i} className="bg-white border border-border rounded-xl overflow-hidden hover:shadow-md transition-shadow">
-                <button onClick={() => setOpenIndex(openIndex === i ? null : i)} className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-gray-50 transition-colors">
+              <div key={i} className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-md transition-shadow">
+                <button onClick={() => setOpenIndex(openIndex === i ? null : i)} className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-hover-bg transition-colors">
                   <div className="flex items-center gap-3">
                     <span className={`w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold ${colors[i % colors.length]}`}>{i + 1}</span>
                     <span className="font-semibold text-sm">{sec.title}</span>

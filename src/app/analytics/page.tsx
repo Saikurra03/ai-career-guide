@@ -79,15 +79,15 @@ export default function AnalyticsPage() {
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-        <div className="bg-white border border-border rounded-2xl p-6 text-center">
+        <div className="bg-card border border-border rounded-2xl p-6 text-center">
           <div className="text-3xl font-bold text-primary">{totalAnalyses}</div>
           <div className="text-sm text-text-muted mt-1">Total Analyses</div>
         </div>
-        <div className="bg-white border border-border rounded-2xl p-6 text-center">
+        <div className="bg-card border border-border rounded-2xl p-6 text-center">
           <div className="text-3xl font-bold text-emerald-500">{thisWeek}</div>
           <div className="text-sm text-text-muted mt-1">This Week</div>
         </div>
-        <div className="bg-white border border-border rounded-2xl p-6 text-center">
+        <div className="bg-card border border-border rounded-2xl p-6 text-center">
           <div className="text-3xl font-bold text-orange-500">{Object.keys(typeCounts).length}</div>
           <div className="text-sm text-text-muted mt-1">Feature Types Used</div>
         </div>
@@ -95,7 +95,7 @@ export default function AnalyticsPage() {
 
       {/* Feature Usage */}
       {Object.keys(typeCounts).length > 0 && (
-        <div className="bg-white border border-border rounded-2xl p-6 mb-8">
+        <div className="bg-card border border-border rounded-2xl p-6 mb-8">
           <h2 className="font-bold mb-4">Feature Usage</h2>
           <div className="space-y-3">
             {Object.entries(typeCounts).sort((a, b) => b[1] - a[1]).map(([type, count]) => (
@@ -104,7 +104,7 @@ export default function AnalyticsPage() {
                   {typeIcons[type] || "📋"}
                 </span>
                 <span className="flex-1 text-sm font-medium capitalize">{type}</span>
-                <div className="flex-1 max-w-[200px] bg-gray-100 rounded-full h-2.5">
+                <div className="flex-1 max-w-[200px] bg-gray-100 dark:bg-gray-700 rounded-full h-2.5">
                   <div
                     className="bg-primary h-2.5 rounded-full transition-all"
                     style={{ width: `${(count / totalAnalyses) * 100}%` }}
@@ -118,12 +118,12 @@ export default function AnalyticsPage() {
       )}
 
       {/* Recent Activity */}
-      <div className="bg-white border border-border rounded-2xl p-6">
+      <div className="bg-card border border-border rounded-2xl p-6">
         <h2 className="font-bold mb-4">Recent Activity</h2>
         {analyses.length > 0 ? (
           <div className="space-y-3">
             {analyses.slice(0, 20).map((a) => (
-              <div key={a.id} className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors">
+              <div key={a.id} className="flex items-center gap-3 p-3 rounded-xl hover:bg-hover-bg transition-colors">
                 <span className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold ${typeColors[a.type] || "bg-gray-100 text-gray-700"}`}>
                   {typeIcons[a.type] || "📋"}
                 </span>

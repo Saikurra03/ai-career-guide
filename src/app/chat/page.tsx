@@ -106,7 +106,7 @@ export default function ChatPage() {
     <div className="max-w-4xl mx-auto flex flex-col h-[calc(100vh-4rem)]">
       {/* Setup Bar */}
       {!hasResume && (
-        <div className="bg-white border border-border rounded-2xl p-4 mb-4">
+        <div className="bg-card border border-border rounded-2xl p-4 mb-4">
           <div className="flex items-center gap-4 flex-wrap">
             <div className="flex-1 min-w-[200px]">
               <div
@@ -157,7 +157,7 @@ export default function ChatPage() {
       )}
 
       {/* Chat Area */}
-      <div className="flex-1 overflow-y-auto bg-white border border-border rounded-2xl p-4 mb-4 space-y-4">
+      <div className="flex-1 overflow-y-auto bg-card border border-border rounded-2xl p-4 mb-4 space-y-4">
         {messages.length === 0 && hasResume && (
           <div className="text-center py-8">
             <div className="text-5xl mb-4">💬</div>
@@ -178,7 +178,7 @@ export default function ChatPage() {
             <div className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
               msg.role === "user"
                 ? "bg-primary text-white rounded-br-md"
-                : "bg-gray-100 text-gray-800 rounded-bl-md"
+                : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-bl-md"
             }`}>
               {msg.role === "assistant" ? (
                 <div dangerouslySetInnerHTML={{ __html: simpleMarkdown(msg.content) }} />
@@ -191,7 +191,7 @@ export default function ChatPage() {
 
         {sending && (
           <div className="flex justify-start">
-            <div className="bg-gray-100 rounded-2xl rounded-bl-md px-4 py-3">
+            <div className="bg-gray-100 dark:bg-gray-700 rounded-2xl rounded-bl-md px-4 py-3">
               <div className="flex gap-1.5">
                 <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
                 <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />

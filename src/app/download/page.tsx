@@ -146,7 +146,7 @@ export default function DownloadPage() {
       <h1 className="text-3xl font-bold mb-2">Download as PDF</h1>
       <p className="text-text-muted mb-8">Upload your resume and download it as a clean PDF file.</p>
 
-      <div className="bg-white border border-border rounded-2xl p-6 mb-6">
+      <div className="bg-card border border-border rounded-2xl p-6 mb-6">
         <div
           onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
           onDragLeave={() => setDragOver(false)}

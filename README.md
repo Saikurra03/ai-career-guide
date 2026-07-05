@@ -40,6 +40,7 @@ npm install
 ```
 
 Create `.env.local`:
+
 ```
 COHERE_API_KEY=your-key-here
 ```
@@ -82,3 +83,15 @@ src/
 ## License
 
 MIT
+Manam already 13 features build chesham. Inka evi add cheyochu:
+
+1.  Cover Letter Generator — resume + JD tho cover letter generate
+2.  Email Writer — follow-up emails, thank you emails after interview
+3.  LinkedIn Optimizer — LinkedIn profile optimize cheyadam
+4.  Career Path Suggestor — experience tho next career path suggest
+5.  Salary Predictor — role/location based salary range
+6.  Resume Score History — score ni track cheyadam over time
+7.  Dark Mode — night mode
+8.  Multi-language Support — Hindi, Telugu lo resume analyze
+9.  Email Notifications — weekly resume tips
+10. Collaboration — friend tho share cheyadam, feedback

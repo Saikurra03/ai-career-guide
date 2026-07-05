@@ -8,6 +8,9 @@
   --card: #ffffff;
   --border: #e2e8f0;
   --text-muted: #64748b;
+  --input-bg: #ffffff;
+  --input-border: #e2e8f0;
+  --hover-bg: #f1f5f9;
 }
 
 .dark {
@@ -18,6 +21,9 @@
   --card: #1e293b;
   --border: #334155;
   --text-muted: #94a3b8;
+  --input-bg: #1e293b;
+  --input-border: #475569;
+  --hover-bg: #334155;
 }
 
 @theme inline {
@@ -28,6 +34,9 @@
   --color-card: var(--card);
   --color-border: var(--border);
   --color-text-muted: var(--text-muted);
+  --color-input-bg: var(--input-bg);
+  --color-input-border: var(--input-border);
+  --color-hover-bg: var(--hover-bg);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -36,7 +45,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.2s, color 0.2s;
 }
 
 /* Scrollbar */
@@ -46,3 +55,67 @@ body {
 .dark ::-webkit-scrollbar-thumb { background: #475569; }
 ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 .dark ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
+/* Dark mode helpers */
+.dark .bg-white { background-color: var(--card) !important; }
+.dark .bg-gray-50 { background-color: var(--card) !important; }
+.dark .bg-gray-100 { background-color: #2d3748 !important; }
+.dark .bg-green-50 { background-color: #064e3b !important; }
+.dark .bg-red-50 { background-color: #7f1d1d !important; }
+.dark .bg-indigo-50 { background-color: #312e81 !important; }
+.dark .bg-blue-50 { background-color: #1e3a5f !important; }
+.dark .bg-purple-50 { background-color: #4c1d95 !important; }
+.dark .bg-orange-50 { background-color: #7c2d12 !important; }
+.dark .bg-teal-50 { background-color: #134e4a !important; }
+.dark .bg-violet-50 { background-color: #4c1d95 !important; }
+.dark .bg-pink-50 { background-color: #831843 !important; }
+.dark .bg-amber-50 { background-color: #78350f !important; }
+.dark .bg-emerald-50 { background-color: #064e3b !important; }
+.dark .bg-rose-50 { background-color: #881337 !important; }
+.dark .bg-cyan-50 { background-color: #164e63 !important; }
+.dark .bg-indigo-50\/80 { background-color: rgba(49,46,129,0.8) !important; }
+
+.dark .text-gray-600 { color: #d1d5db !important; }
+.dark .text-gray-500 { color: #d1d5db !important; }
+.dark .text-gray-800 { color: #e5e7eb !important; }
+.dark .text-gray-700 { color: #d1d5db !important; }
+.dark .text-red-700 { color: #fca5a5 !important; }
+.dark .text-green-700 { color: #86efac !important; }
+.dark .text-blue-700 { color: #93c5fd !important; }
+.dark .text-indigo-700 { color: #a5b4fc !important; }
+.dark .text-purple-700 { color: #c4b5fd !important; }
+.dark .text-orange-700 { color: #fdba74 !important; }
+.dark .text-teal-700 { color: #5eead4 !important; }
+.dark .text-pink-700 { color: #f9a8d4 !important; }
+.dark .text-amber-700 { color: #fcd34d !important; }
+.dark .text-emerald-700 { color: #6ee7b7 !important; }
+.dark .text-rose-700 { color: #fda4af !important; }
+.dark .text-cyan-700 { color: #67e8f9 !important; }
+.dark .text-violet-700 { color: #c4b5fd !important; }
+.dark .text-red-500 { color: #fca5a5 !important; }
+
+.dark .border-gray-200 { border-color: var(--border) !important; }
+.dark .border-green-200 { border-color: #065f46 !important; }
+.dark .border-red-200 { border-color: #991b1b !important; }
+.dark .border-indigo-200 { border-color: #3730a3 !important; }
+.dark .border-blue-200 { border-color: #1e40af !important; }
+.dark .border-purple-200 { border-color: #5b21b6 !important; }
+.dark .border-orange-200 { border-color: #9a3412 !important; }
+.dark .border-teal-200 { border-color: #115e59 !important; }
+.dark .border-pink-200 { border-color: #9d174d !important; }
+.dark .border-amber-200 { border-color: #92400e !important; }
+.dark .border-emerald-200 { border-color: #065f46 !important; }
+.dark .border-rose-200 { border-color: #9f1239 !important; }
+.dark .border-cyan-200 { border-color: #155e75 !important; }
+.dark .border-violet-200 { border-color: #5b21b6 !important; }
+
+.dark textarea,
+.dark input[type="text"],
+.dark input:not([type]) {
+  background-color: var(--input-bg) !important;
+  border-color: var(--input-border) !important;
+  color: var(--foreground) !important;
+}
+
+.dark .shadow-lg { box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important; }
+.dark .shadow-md { box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important; }

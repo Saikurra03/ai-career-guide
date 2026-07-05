@@ -75,7 +75,7 @@ export default function HistoryPage() {
       <p className="text-text-muted mb-8">Save, compare, and manage different versions of your resume.</p>
 
       {/* Add Version */}
-      <div className="bg-white border border-border rounded-2xl p-6 mb-6">
+      <div className="bg-card border border-border rounded-2xl p-6 mb-6">
         <h2 className="font-bold mb-4">Save New Version</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
           <input
@@ -105,7 +105,7 @@ export default function HistoryPage() {
 
       {/* Version List */}
       {versions.length > 0 && (
-        <div className="bg-white border border-border rounded-2xl p-6 mb-6">
+        <div className="bg-card border border-border rounded-2xl p-6 mb-6">
           <div className="flex items-center justify-between mb-4">
             <h2 className="font-bold">Saved Versions ({versions.length})</h2>
             {selectedIds.length === 2 && (
@@ -134,8 +134,8 @@ export default function HistoryPage() {
                     </div>
                   )}
                 </div>
-                <button onClick={() => setViewing(v)} className="px-3 py-1.5 border border-border rounded-lg text-xs font-medium hover:bg-gray-50">View</button>
-                <button onClick={() => { navigator.clipboard.writeText(v.text); }} className="px-3 py-1.5 border border-border rounded-lg text-xs font-medium hover:bg-gray-50">Copy</button>
+                <button onClick={() => setViewing(v)} className="px-3 py-1.5 border border-border rounded-lg text-xs font-medium hover:bg-hover-bg">View</button>
+                <button onClick={() => { navigator.clipboard.writeText(v.text); }} className="px-3 py-1.5 border border-border rounded-lg text-xs font-medium hover:bg-hover-bg">Copy</button>
                 <button onClick={() => deleteVersion(v.id)} className="px-3 py-1.5 text-red-500 hover:text-red-700 text-xs font-medium">Delete</button>
               </div>
             ))}
@@ -145,9 +145,9 @@ export default function HistoryPage() {
 
       {/* Diff View */}
       {selectedVersions.length === 2 && (
-        <div className="bg-white border border-border rounded-2xl p-6 mb-6">
+        <div className="bg-card border border-border rounded-2xl p-6 mb-6">
           <h2 className="font-bold mb-4">Comparison: {selectedVersions[0].name} vs {selectedVersions[1].name}</h2>
-          <div className="bg-gray-50 rounded-xl p-4 max-h-[400px] overflow-y-auto font-mono text-xs">
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 max-h-[400px] overflow-y-auto font-mono text-xs">
             {(() => {
               const diffs = diffLines(selectedVersions[0].text, selectedVersions[1].text);
               return diffs.map((d, i) => (
@@ -167,7 +167,7 @@ export default function HistoryPage() {
       {/* View Modal */}
       {viewing && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={() => setViewing(null)}>
-          <div className="bg-white rounded-2xl max-w-3xl w-full max-h-[80vh] overflow-hidden" onClick={(e) => e.stopPropagation()}>
+          <div className="bg-card rounded-2xl max-w-3xl w-full max-h-[80vh] overflow-hidden" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-center justify-between px-6 py-4 border-b border-border">
               <div>
                 <h3 className="font-bold">{viewing.name}</h3>

@@ -63,18 +63,18 @@ export default function ResultsPage() {
           <p className="text-text-muted">{sections.length} sections generated</p>
         </div>
         <div className="flex gap-2">
-          <button onClick={() => setOpenIndex(null)} className="px-4 py-2 border border-border rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors">Expand All</button>
-          <button onClick={() => setOpenIndex(-1)} className="px-4 py-2 border border-border rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors">Collapse All</button>
-          <button onClick={() => { navigator.clipboard.writeText(rawResult); }} className="px-4 py-2 border border-border rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors">Copy</button>
+          <button onClick={() => setOpenIndex(null)} className="px-4 py-2 border border-border rounded-lg text-sm font-medium hover:bg-hover-bg transition-colors">Expand All</button>
+          <button onClick={() => setOpenIndex(-1)} className="px-4 py-2 border border-border rounded-lg text-sm font-medium hover:bg-hover-bg transition-colors">Collapse All</button>
+          <button onClick={() => { navigator.clipboard.writeText(rawResult); }} className="px-4 py-2 border border-border rounded-lg text-sm font-medium hover:bg-hover-bg transition-colors">Copy</button>
         </div>
       </div>
 
       <div className="space-y-3">
         {sections.map((sec, i) => (
-          <div key={i} className="bg-white border border-border rounded-xl overflow-hidden transition-shadow hover:shadow-md">
+          <div key={i} className="bg-card border border-border rounded-xl overflow-hidden transition-shadow hover:shadow-md">
             <button
               onClick={() => setOpenIndex(openIndex === i ? null : i)}
-              className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-gray-50 transition-colors"
+              className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-hover-bg transition-colors"
             >
               <div className="flex items-center gap-3">
                 <span className={`w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold ${colors[i % colors.length]}`}>
@@ -92,7 +92,7 @@ export default function ResultsPage() {
       </div>
 
       <div className="mt-8 text-center">
-        <Link href="/upload" className="inline-flex px-6 py-3 border border-border rounded-xl font-medium hover:bg-gray-50 transition-colors">
+        <Link href="/upload" className="inline-flex px-6 py-3 border border-border rounded-xl font-medium hover:bg-hover-bg transition-colors">
           ← Analyze Another Resume
         </Link>
       </div>

@@ -19,7 +19,7 @@ const SkillBadge = ({ label }: { label: string }) => (
 );
 
 const Section = ({ title, icon, children, color = "bg-indigo-100 text-indigo-700" }: { title: string; icon: string; children: React.ReactNode; color?: string }) => (
-  <div className="bg-white border border-border rounded-2xl p-6">
+  <div className="bg-card border border-border rounded-2xl p-6">
     <div className="flex items-center gap-3 mb-4">
       <span className={`w-9 h-9 rounded-xl flex items-center justify-center text-sm font-bold ${color}`}>{icon}</span>
       <h3 className="font-bold text-base">{title}</h3>
@@ -85,7 +85,7 @@ export default function ParserPage() {
       <h1 className="text-3xl font-bold mb-2">Resume Parser</h1>
       <p className="text-text-muted mb-8">Upload your resume to extract structured data: contact info, skills, experience, education, and more.</p>
 
-      <div className="bg-white border border-border rounded-2xl p-6 mb-6">
+      <div className="bg-card border border-border rounded-2xl p-6 mb-6">
         <h2 className="font-bold mb-4">Upload Resume</h2>
         <div
           onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}

@@ -79,7 +79,7 @@ export default function UploadPage() {
       <h1 className="text-3xl font-bold mb-2">Analyze Your Resume</h1>
       <p className="text-text-muted mb-8">Upload a PDF or paste your resume text, then get AI-powered feedback.</p>
 
-      <div className="bg-white border border-border rounded-2xl p-8">
+      <div className="bg-card border border-border rounded-2xl p-8">
         <div className="grid grid-cols-2 gap-4 mb-6">
           <div>
             <label className="block text-xs font-bold text-text-muted uppercase tracking-wider mb-2">Target Job Role</label>
@@ -111,7 +111,7 @@ export default function UploadPage() {
           onDrop={handleDrop}
           onClick={() => fileInputRef.current?.click()}
           className={`border-2 border-dashed rounded-2xl p-10 text-center cursor-pointer transition-all mb-4 ${
-            dragOver ? "border-primary bg-indigo-50 scale-[1.02]" : "border-border hover:border-primary/50 hover:bg-gray-50"
+            dragOver ? "border-primary bg-indigo-50 scale-[1.02]" : "border-border hover:border-primary/50 hover:bg-hover-bg"
           }`}
         >
           <div className="text-4xl mb-3">📁</div>

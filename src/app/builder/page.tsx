@@ -4,10 +4,10 @@ import { useState, useRef } from "react";
 import { trackAnalysis } from "@/lib/track";
 
 const templates = [
-  { id: "professional", name: "Professional", desc: "Clean, traditional format", color: "bg-blue-500", preview: "bg-white border-2 border-blue-200" },
-  { id: "modern", name: "Modern", desc: "Two-column with sidebar", color: "bg-violet-500", preview: "bg-white border-2 border-violet-200" },
-  { id: "minimal", name: "Minimal", desc: "Clean with whitespace", color: "bg-gray-500", preview: "bg-white border-2 border-gray-200" },
-  { id: "creative", name: "Creative", desc: "Color accents & visual", color: "bg-pink-500", preview: "bg-white border-2 border-pink-200" },
+  { id: "professional", name: "Professional", desc: "Clean, traditional format", color: "bg-blue-500", preview: "bg-card border-2 border-blue-200" },
+  { id: "modern", name: "Modern", desc: "Two-column with sidebar", color: "bg-violet-500", preview: "bg-card border-2 border-violet-200" },
+  { id: "minimal", name: "Minimal", desc: "Clean with whitespace", color: "bg-gray-500", preview: "bg-card border-2 border-gray-200" },
+  { id: "creative", name: "Creative", desc: "Color accents & visual", color: "bg-pink-500", preview: "bg-card border-2 border-pink-200" },
 ];
 
 export default function BuilderPage() {
@@ -78,7 +78,7 @@ export default function BuilderPage() {
         {/* Left: Editor */}
         <div className="lg:col-span-3 space-y-6">
           {/* Upload */}
-          <div className="bg-white border border-border rounded-2xl p-6">
+          <div className="bg-card border border-border rounded-2xl p-6">
             <h2 className="font-bold mb-4">Your Resume</h2>
             <div
               onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
@@ -111,7 +111,7 @@ export default function BuilderPage() {
           </div>
 
           {/* Instructions */}
-          <div className="bg-white border border-border rounded-2xl p-6">
+          <div className="bg-card border border-border rounded-2xl p-6">
             <h2 className="font-bold mb-3">Custom Instructions (Optional)</h2>
             <textarea
               value={instructions}
@@ -126,7 +126,7 @@ export default function BuilderPage() {
         {/* Right: Templates & Preview */}
         <div className="lg:col-span-2 space-y-6">
           {/* Templates */}
-          <div className="bg-white border border-border rounded-2xl p-6">
+          <div className="bg-card border border-border rounded-2xl p-6">
             <h2 className="font-bold mb-4">Choose Template</h2>
             <div className="space-y-3">
               {templates.map((t) => (
@@ -173,16 +173,16 @@ export default function BuilderPage() {
 
           {/* Preview */}
           {showPreview && formatted && (
-            <div className="bg-white border border-border rounded-2xl p-6">
+            <div className="bg-card border border-border rounded-2xl p-6">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="font-bold">Formatted Preview</h2>
                 <div className="flex gap-2">
                   <button onClick={applyFormat} className="px-3 py-1.5 bg-primary text-white rounded-lg text-xs font-medium hover:bg-primary-hover">Apply</button>
-                  <button onClick={() => navigator.clipboard.writeText(formatted)} className="px-3 py-1.5 border border-border rounded-lg text-xs font-medium hover:bg-gray-50">Copy</button>
-                  <button onClick={() => setShowPreview(false)} className="px-3 py-1.5 border border-border rounded-lg text-xs font-medium hover:bg-gray-50">✕</button>
+                  <button onClick={() => navigator.clipboard.writeText(formatted)} className="px-3 py-1.5 border border-border rounded-lg text-xs font-medium hover:bg-hover-bg">Copy</button>
+                  <button onClick={() => setShowPreview(false)} className="px-3 py-1.5 border border-border rounded-lg text-xs font-medium hover:bg-hover-bg">✕</button>
                 </div>
               </div>
-              <div className="bg-gray-50 rounded-xl p-4 max-h-[500px] overflow-y-auto">
+              <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 max-h-[500px] overflow-y-auto">
                 <pre className="whitespace-pre-wrap text-xs text-gray-700 font-mono leading-relaxed">{formatted}</pre>
               </div>
             </div>

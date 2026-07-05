@@ -89,7 +89,7 @@ export default function RecruiterPage() {
       <p className="text-text-muted mb-8">Get feedback from an AI recruiter who&apos;s reviewed thousands of resumes for this role.</p>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-        <div className="bg-white border border-border rounded-2xl p-6">
+        <div className="bg-card border border-border rounded-2xl p-6">
           <h2 className="font-bold mb-4">Your Resume</h2>
           <div
             onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
@@ -121,7 +121,7 @@ export default function RecruiterPage() {
           />
         </div>
 
-        <div className="bg-white border border-border rounded-2xl p-6">
+        <div className="bg-card border border-border rounded-2xl p-6">
           <h2 className="font-bold mb-4">Job Description</h2>
           <p className="text-xs text-text-muted mb-3">The role you&apos;re applying for</p>
           <textarea
@@ -158,15 +158,15 @@ export default function RecruiterPage() {
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold">Recruiter Feedback ({sections.length} sections)</h2>
             <div className="flex gap-2">
-              <button onClick={() => setOpenIndex(null)} className="px-3 py-1.5 border border-border rounded-lg text-xs font-medium hover:bg-gray-50">Expand All</button>
-              <button onClick={() => setOpenIndex(-1)} className="px-3 py-1.5 border border-border rounded-lg text-xs font-medium hover:bg-gray-50">Collapse All</button>
-              <button onClick={() => navigator.clipboard.writeText(rawResult)} className="px-3 py-1.5 border border-border rounded-lg text-xs font-medium hover:bg-gray-50">Copy</button>
+              <button onClick={() => setOpenIndex(null)} className="px-3 py-1.5 border border-border rounded-lg text-xs font-medium hover:bg-hover-bg">Expand All</button>
+              <button onClick={() => setOpenIndex(-1)} className="px-3 py-1.5 border border-border rounded-lg text-xs font-medium hover:bg-hover-bg">Collapse All</button>
+              <button onClick={() => navigator.clipboard.writeText(rawResult)} className="px-3 py-1.5 border border-border rounded-lg text-xs font-medium hover:bg-hover-bg">Copy</button>
             </div>
           </div>
           <div className="space-y-3">
             {sections.map((sec, i) => (
-              <div key={i} className="bg-white border border-border rounded-xl overflow-hidden hover:shadow-md transition-shadow">
-                <button onClick={() => setOpenIndex(openIndex === i ? null : i)} className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-gray-50 transition-colors">
+              <div key={i} className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-md transition-shadow">
+                <button onClick={() => setOpenIndex(openIndex === i ? null : i)} className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-hover-bg transition-colors">
                   <div className="flex items-center gap-3">
                     <span className={`w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold ${colors[i % colors.length]}`}>{i + 1}</span>
                     <span className="font-semibold text-sm">{sec.title}</span>

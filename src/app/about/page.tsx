@@ -7,7 +7,7 @@ export default function AboutPage() {
       <p className="text-text-muted mb-8">The person behind AI Career Guide.</p>
 
       {/* Profile Card */}
-      <div className="bg-white border border-border rounded-2xl p-8 mb-8">
+      <div className="bg-card border border-border rounded-2xl p-8 mb-8">
         <div className="flex flex-col sm:flex-row items-center gap-6">
           <div className="w-24 h-24 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl font-bold">
             SK
@@ -69,7 +69,7 @@ export default function AboutPage() {
       </div>
 
       {/* About the Project */}
-      <div className="bg-white border border-border rounded-2xl p-8 mb-8">
+      <div className="bg-card border border-border rounded-2xl p-8 mb-8">
         <h3 className="font-bold text-lg mb-4">About AI Career Guide</h3>
         <div className="space-y-4 text-sm text-gray-600 leading-relaxed">
           <p>
@@ -85,7 +85,7 @@ export default function AboutPage() {
       </div>
 
       {/* Tech Stack */}
-      <div className="bg-white border border-border rounded-2xl p-8">
+      <div className="bg-card border border-border rounded-2xl p-8">
         <h3 className="font-bold text-lg mb-4">Tech Stack</h3>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {["Next.js", "TypeScript", "Tailwind CSS", "Cohere API", "pdf2json", "jsPDF", "Vercel"].map((tech) => (
