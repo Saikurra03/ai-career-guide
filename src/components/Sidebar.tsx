@@ -18,6 +18,7 @@ const links = [
   { href: "/download", label: "Download PDF", icon: "📥" },
   { href: "/history", label: "Version History", icon: "📑" },
   { href: "/analytics", label: "Analytics", icon: "📈" },
+  { href: "/about", label: "About", icon: "👤" },
 ];
 
 export function Sidebar() {
