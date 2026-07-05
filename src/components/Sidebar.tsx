@@ -56,7 +56,7 @@ export function Sidebar() {
           <span className="text-2xl">📋</span> AI Career Guide
         </h1>
       </div>
-      <nav className="flex-1 p-4 space-y-1">
+      <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
         {links.map((link) => (
           <Link
             key={link.href}

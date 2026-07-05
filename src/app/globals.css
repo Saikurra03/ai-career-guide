@@ -113,6 +113,14 @@ main::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
 main::-webkit-scrollbar-thumb:hover { background: #64748b; }
 .dark main::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
+/* Sidebar scrollbar - always visible */
+aside nav::-webkit-scrollbar { width: 5px; }
+aside nav::-webkit-scrollbar-track { background: transparent; }
+aside nav::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+.dark aside nav::-webkit-scrollbar-thumb { background: #475569; }
+aside nav::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+.dark aside nav::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
 /* Dark mode helpers */
 .dark .bg-white { background-color: var(--card) !important; }
 .dark .bg-gray-50 { background-color: var(--card) !important; }
