@@ -28,7 +28,7 @@ export default function AboutPage() {
                 GitHub
               </a>
               <a
-                href="https://linkedin.com/in/YOUR_LINKEDIN"
+                href="https://www.linkedin.com/in/venkata-sai-baba-kurra-694467305/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-xl text-sm font-medium hover:bg-blue-700 transition-colors"
@@ -40,6 +40,31 @@ export default function AboutPage() {
               </a>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Built by a Student */}
+      <div className="bg-gradient-to-br from-indigo-50 to-purple-50 border border-indigo-200 rounded-2xl p-8 mb-8">
+        <h3 className="font-bold text-lg mb-4">Built by a Student, for Students</h3>
+        <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+          <p>
+            I know what it feels like to stare at a blank resume, wondering if it&apos;s good enough.
+            I know the anxiety of applying to hundreds of jobs and hearing nothing back. I know
+            the frustration of getting rejected by ATS systems without ever reaching a human.
+          </p>
+          <p>
+            That&apos;s why I built AI Career Guide — not as a company, but as a fellow student who
+            wanted to help. Every feature in this tool comes from the real struggles that students
+            face every day during job hunting.
+          </p>
+          <p>
+            Whether you&apos;re applying for your first internship or your dream job, this tool is
+            here to give you the same advantages that career coaches charge hundreds of dollars for.
+            Because everyone deserves a fair shot at their career.
+          </p>
+          <p className="font-medium text-indigo-700">
+            You&apos;re not alone in this. We&apos;re all figuring it out together.
+          </p>
         </div>
       </div>
 
@@ -55,10 +80,6 @@ export default function AboutPage() {
             It features 13 tools including ATS scoring, recruiter analysis, resume parsing, job description
             parsing, resume tailoring, AI chat, interview preparation, skill gap analysis, resume building,
             PDF download, version history, and analytics.
-          </p>
-          <p>
-            The goal is to give everyone access to the same resume optimization tools that
-            professional career coaches use — for free.
           </p>
         </div>
       </div>
